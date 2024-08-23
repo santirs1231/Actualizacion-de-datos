@@ -1,0 +1,82 @@
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+  <div class="custom-form">
+    <form (ngSubmit)="submitForm()">
+      <!-- Datos de Experiencia Laboral -->
+      <fieldset>
+        <legend>Experiencia Laboral</legend>
+
+        <div class="form-group">
+          <label for="tieneExperiencia">¿Tiene experiencia laboral?</label>
+          <select id="tieneExperiencia" [(ngModel)]="experiencia.tieneExperiencia" name="tieneExperiencia" class="form-control" required>
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div *ngIf="experiencia.tieneExperiencia === 'si'">
+          <div class="form-group form-grid">
+            <div class="form-group">
+              <label for="empresa">Nombre de la Empresa:</label>
+              <input type="text" id="empresa" name="empresa" class="form-control" [(ngModel)]="experiencia.empresa">
+            </div>
+  
+            <div class="form-group">
+              <label for="cargo">Cargo Desempeñado:</label>
+              <input type="text" id="cargo" name="cargo" class="form-control" [(ngModel)]="experiencia.cargo">
+            </div>
+  
+            <div class="d-grid grid-cols-auto">
+              <label for="fechaInicio">Fecha de Inicio:</label>
+              <input type="date" id="fechaInicio" name="fechaInicio" class="form-control" [(ngModel)]="experiencia.fechaInicio">
+            </div>
+  
+            <div class="d-grid grid-cols-auto">
+              <label for="fechaFin">Fecha de Fin:</label>
+              <input type="date" id="fechaFin" name="fechaFin" class="form-control" [(ngModel)]="experiencia.fechaFin">
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="experiencia.tieneExperiencia === 'no' || experiencia.tieneExperiencia === ''">
+          <!-- Aquí podrías colocar un mensaje o contenido adicional si se selecciona "No" -->
+        </div>
+
+        <!-- Lista de experiencias agregadas -->
+        <div *ngIf="experiencias.length > 0">
+          <hr>
+          <h4>Experiencias Agregadas:</h4>
+          <div *ngFor="let experiencia of experiencias; let i = index" class="form-group">
+            <strong>Empresa:</strong> {{ experiencia.empresa }}<br>
+            <strong>Cargo:</strong> {{ experiencia.cargo }}<br>
+            <strong>Fecha de Inicio:</strong> {{ experiencia.fechaInicio }}<br>
+            <strong>Fecha de Fin:</strong> {{ experiencia.fechaFin }}<br>
+            <button type="button" class="btn btn-danger" (click)="eliminarExperiencia(i)">Eliminar</button>
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-success mt-3" (click)="agregarExperiencia()">Agregar</button>
+        </div>
+      </fieldset>
+      <div class="form-grid">
+        <button type="button" class="btn btn-secondary" (click)="navegarAActualizar()">Atrás</button>
+        <button type="submit" class="btn btn-primary">Siguiente</button>
+      </div>
+
+      <div class="custom-modal" *ngIf="mostrarAlerta">
+        <div class="custom-modal-content">
+          <span class="close-btn" (click)="mostrarAlerta = false">&times;</span>
+          <p>Todos los campos son obligatorios. Por favor, complete todos los campos.</p>
+          <button class="btn-primary" (click)="mostrarAlerta = false">OK</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+  
+  
+  
+  
+  
+

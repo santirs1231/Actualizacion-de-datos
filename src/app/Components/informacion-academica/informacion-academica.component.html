@@ -1,0 +1,48 @@
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+  <div class="custom-form">
+    <form  (ngSubmit)="submitForm()">
+      <fieldset>
+        <legend>Información Académica</legend>
+        <div class="form-group">
+          <label for="tipoEstudio">Tipo de estudio:</label>
+          <select id="tipoEstudio" [(ngModel)]="estudio.tipoEstudio" name="tipoEstudio" class="form-control">
+            <option value="">Seleccione</option>
+            <option value="PRIMARIA">PRIMARIA</option>
+            <option value="BACHILLERATO">BACHILLERATO</option>
+            <option value="TECNICO">TECNICO</option>
+            <option value="TECNOLOGIA">TECNOLOGIA</option>
+            <option value="UNIVERSITARIO">UNIVERSITARIO</option>
+            <option value="ESPECIALIZACIÓN">ESPECIALIZACIÓN</option>
+            <option value="MAESTRIA">MAESTRIA</option>
+            <option value="DOCTORADO">DOCTORADO</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="titulo">Título:</label>
+          <input id="titulo" type="text" [(ngModel)]="estudio.titulo" name="titulo" class="form-control">
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-success mt-3" (click)="agregarEstudio()">Agregar Estudio</button>
+        </div>
+      
+        <div *ngIf="estudios.length > 0">
+          <hr>
+          <h4>Estudios Agregados:</h4>
+          <div *ngFor="let estudio of estudios; let i = index" class="form-group">
+            <strong>Tipo de Estudio:</strong> {{ estudio.tipoEstudio }}<br>
+            <strong>Título:</strong> {{ estudio.titulo }}<br>
+            <button type="button" class="btn btn-danger" (click)="eliminarEstudio(i)">Eliminar</button>
+          </div>
+        </div>
+        
+      </fieldset>
+      
+    <div class="form-grid">
+      <button type="button" class="btn btn-secondary" (click)="navegarANucleoFamiliar()">Atrás</button>
+      <button type="submit" class="btn btn-primary" >Siguiente</button>
+    </div>
+    
+    </form>
+  </div>
+</div>
+

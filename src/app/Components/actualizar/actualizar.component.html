@@ -1,0 +1,361 @@
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+  <div class="custom-form">
+    <form (ngSubmit)="submitForm()">
+      <!-- Datos Personales -->
+      <fieldset>
+        <legend>Datos Personales</legend>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="tipoId">Tipo ID:</label>
+            <select id="tipoId" name="tipoId" class="form-control" [(ngModel)]="usuario.tipoId">
+              <option value="Cedula">Cédula</option>
+              <option value="Pasaporte">Pasaporte</option>
+              <option value="CarnetExtranjeria">Carnet de Extranjería</option>
+            </select>
+          </div>
+        
+          <div class="form-group">
+            <label for="numeroId">Número ID:</label>
+            <input type="text" id="numeroId" name="numeroId" class="form-control" [(ngModel)]="usuario.numeroId" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="primerNombre">Primer Nombre:</label>
+            <input type="text" id="primerNombre" name="primerNombre" class="form-control" [(ngModel)]="usuario.primerNombre" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="segundoNombre">Segundo Nombre:</label>
+            <input type="text" id="segundoNombre" name="segundoNombre" class="form-control" [(ngModel)]="usuario.segundoNombre">
+          </div>
+        
+          <div class="form-group">
+            <label for="primerApellido">Primer Apellido:</label>
+            <input type="text" id="primerApellido" name="primerApellido" class="form-control" [(ngModel)]="usuario.primerApellido" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="segundoApellido">Segundo Apellido:</label>
+            <input type="text" id="segundoApellido" name="segundoApellido" class="form-control" [(ngModel)]="usuario.segundoApellido">
+          </div>
+        
+          <div class="form-group">
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-control" [(ngModel)]="usuario.fechaNacimiento">
+          </div>
+        
+          <div class="form-group">
+            <label for="paisNacimiento">País de Nacimiento:</label>
+            <input type="text" id="paisNacimiento" name="paisNacimiento" class="form-control" [(ngModel)]="usuario.paisNacimiento">
+          </div>
+        
+          <div class="form-group">
+            <label for="departamentoNacimiento">Departamento Nacimiento:</label>
+            <input type="text" id="departamentoNacimiento" name="departamentoNacimiento" class="form-control" [(ngModel)]="usuario.departamentoNacimiento">
+          </div>
+        
+          <div class="form-group">
+            <label for="ciudadNacimiento">Ciudad de Nacimiento:</label>
+            <input type="text" id="ciudadNacimiento" name="ciudadNacimiento" class="form-control" [(ngModel)]="usuario.ciudadNacimiento">
+          </div>
+        
+          <div class="form-group">
+            <label for="fechaExpedicionId">Fecha Expedición ID:</label>
+            <input type="date" id="fechaExpedicionId" name="fechaExpedicionId" class="form-control" [(ngModel)]="usuario.fechaExpedicionId">
+          </div>
+        
+          <div class="form-group">
+            <label for="paisExpedicionId">País Expedición ID:</label>
+            <input type="text" id="paisExpedicionId" name="paisExpedicionId" class="form-control" [(ngModel)]="usuario.paisExpedicionId">
+          </div>
+        
+          <div class="form-group">
+            <label for="departamentoExpedicionId">Departamento Expedición ID:</label>
+            <input type="text" id="departamentoExpedicionId" name="departamentoExpedicionId" class="form-control" [(ngModel)]="usuario.departamentoExpedicionId">
+          </div>
+        
+          <div class="form-group">
+            <label for="ciudadExpedicionId">Ciudad Expedición ID:</label>
+            <input type="text" id="ciudadExpedicionId" name="ciudadExpedicionId" class="form-control" [(ngModel)]="usuario.ciudadExpedicionId">
+          </div>
+      
+          <div class="form-group">
+            <label for="grupoSanguineo">Grupo Sanguíneo:</label>
+            <input type="text" id="grupoSanguineo" name="grupoSanguineo" class="form-control" [(ngModel)]="usuario.grupoSanguineo">
+          </div>
+      
+          <div class="form-group">
+            <label for="genero">Género:</label>
+            <select id="genero" name="genero" class="form-control" [(ngModel)]="usuario.genero">
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+              <option value="Persona trans">Persona trans</option>
+              <option value="Persona no binaries">Persona no binaries</option>
+              <option value="Queer">Queer</option>
+              <option value="No aplica">No aplica</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="orientacionSexual">Orientación Sexual:</label>
+            <select id="orientacionSexual" name="orientacionSexual" class="form-control" [(ngModel)]="usuario.orientacionSexual">
+              <option value="Gay">Gay</option>
+              <option value="Lesbiana">Lesbiana</option>
+              <option value="Bisexual">Bisexual</option>
+              <option value="Heterosexual">Heterosexual</option>
+              <option value="Asexual">Asexual</option>
+              <option value="NoAplica">No Aplica</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="pertenenciaEtnica">Pertenencia Étnica:</label>
+            <select id="pertenenciaEtnica" name="pertenenciaEtnica" class="form-control" [(ngModel)]="usuario.pertenenciaEtnica">
+              <option value="Indigena">Indígena</option>
+              <option value="Rom">Rom</option>
+              <option value="Raizal">Raizal</option>
+              <option value="Palanquero">Palanquero</option>
+              <option value="ComunidadesNegras">Comunidades Negras</option>
+              <option value="Mulato">Mulato</option>
+              <option value="Afrocolombiano">Afrocolombiano</option>
+              <option value="NoAplica">No Aplica</option>
+            </select>
+          </div>
+      
+          <!-- Nuevo código para Condición Vulnerable -->
+          <div class="form-group">
+            <label for="condicionVulnerable">Condición Vulnerable:</label>
+            <select id="condicionVulnerable" name="condicionVulnerable" class="form-control" [(ngModel)]="usuario.condicionVulnerable">
+              <option value="AdultoMayor">Adulto Mayor</option>
+              <option value="Desplazado">Desplazado</option>
+              <option value="PersonaConDiscapacidad">Persona con discapacidad</option>
+              <option value="MadreCabezaDeFamilia">Madre Cabeza de Familia</option>
+              <option value="Campesino">Campesino/a</option>
+              <option value="MujerVictimaDeViolencia">Mujer víctima de violencia de género</option>
+              <option value="NinosNinasAdolescentes">Niños, niñas y/o adolescentes</option>
+              <option value="NoAplica">No Aplica</option>
+            </select>
+          </div>
+      
+          <div class="form-group">
+            <label for="estadoCivil">Estado Civil:</label>
+            <select id="estadoCivil" name="estadoCivil" class="form-control" [(ngModel)]="usuario.estadoCivil">
+              <option value="Soltero">Soltero</option>
+              <option value="Casado">Casado</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+      
+          <div class="form-group">
+            <label for="tenenciaVivienda">Tenencia de Vivienda</label>
+            <select id="tenenciaVivienda" name="tenenciaVivienda" class="form-control" [(ngModel)]="usuario.tenenciaVivienda">
+              <option value="Familiar">Familiar</option>
+              <option value="Propia">Propia</option>
+              <option value="Arrendada">Arrendada</option>
+            </select>
+          </div>
+      
+          <div class="form-group">
+            <label for="tipoVivienda">Tipo de Vivienda:</label>
+            <select id="tipoVivienda" name="tipoVivienda" class="form-control" [(ngModel)]="usuario.tipoVivienda">
+              <option value="Apartamento">Apartamento</option>
+              <option value="Casa">Casa</option>
+              <option value="Habitacion">Habitación</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" class="form-control" [(ngModel)]="usuario.direccion">
+          </div>
+          
+          <div class="form-group">
+            <label for="ciudadResidencia">Ciudad de Residencia:</label>
+            <input type="text" id="ciudadResidencia" name="ciudadResidencia" class="form-control" [(ngModel)]="usuario.ciudadResidencia">
+          </div>
+          
+          <div class="form-group">
+            <label for="paisResidencia">País de Residencia:</label>
+            <input type="text" id="paisResidencia" name="paisResidencia" class="form-control" [(ngModel)]="usuario.paisResidencia">
+          </div>
+          
+          <div class="form-group">
+            <label for="departamentoResidencia">Departamento de Residencia:</label>
+            <input type="text" id="departamentoResidencia" name="departamentoResidencia" class="form-control" [(ngModel)]="usuario.departamentoResidencia">
+          </div>
+          
+          <div class="form-group">
+            <label for="barrio">Barrio:</label>
+            <input type="text" id="barrio" name="barrio" class="form-control" [(ngModel)]="usuario.barrio">
+          </div>
+          
+          <div class="form-group">
+            <label for="estratoVivienda">Estrato de Vivienda:</label>
+            <input type="text" id="estratoVivienda" name="estratoVivienda" class="form-control" [(ngModel)]="usuario.estratoVivienda">
+          </div>
+          
+          <div class="form-group">
+            <label for="ocupacion">Ocupación:</label>
+            <input type="text" id="ocupacion" name="ocupacion" class="form-control" [(ngModel)]="usuario.ocupacion">
+          </div>
+          
+          <div class="form-group">
+            <label for="medioTransporte">Medio de Transporte:</label>
+            <select id="medioTransporte" name="medioTransporte" class="form-control" [(ngModel)]="usuario.medioTransporte">
+              <option value="Bus">Bus</option>
+              <option value="Taxi">Taxi</option>
+              <option value="Vehiculo">Vehículo</option>
+            </select>
+          </div>
+      
+          <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" class="form-control" [(ngModel)]="usuario.telefono">
+          </div>
+      
+          <div class="form-group">
+            <label for="celular">Celular:</label>
+            <input type="text" id="celular" name="celular" class="form-control" [(ngModel)]="usuario.celular">
+          </div>
+      
+          <div class="form-group">
+            <label for="correo">Correo:</label>
+            <input type="text" id="correo" name="correo" class="form-control" [(ngModel)]="usuario.correo">
+          </div>
+          
+          <div class="form-group">
+            <label for="redes">¿Usa Redes Sociales?</label>
+            <select id="redes" name="redes" class="form-control" [(ngModel)]="usuario.redes">
+              <option value="Si">Sí</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+      </div>
+          
+        
+          <div *ngIf="mostrarRedesSociales()" class="form-grid">
+            <div class="form-group">
+              <label for="facebook">Facebook:</label>
+              <input type="text" id="facebook" name="facebook" class="form-control" [(ngModel)]="usuario.redesSociales.facebook">
+            </div>
+            <div class="form-group">
+              <label for="instagram">Instagram:</label>
+              <input type="text" id="instagram" name="instagram" class="form-control" [(ngModel)]="usuario.redesSociales.instagram">
+            </div>
+            <div class="form-group">
+              <label for="twitter">Twitter:</label>
+              <input type="text" id="twitter" name="twitter" class="form-control" [(ngModel)]="usuario.redesSociales.twitter">
+            </div>
+            <div class="form-group">
+              <label for="linkedin">LinkedIn:</label>
+              <input type="text" id="linkedin" name="linkedin" class="form-control" [(ngModel)]="usuario.redesSociales.linkedin">
+            </div>
+          </div>
+        
+        
+      </fieldset>
+
+      <!-- Información Laboral -->
+      <fieldset>
+        <legend>Información Laboral </legend>
+        <div class="form-grid">
+      
+          <div class="form-group">
+            <label for="compania">Compañía:</label>
+            <input type="text" id="compania" name="compania" class="form-control" [(ngModel)]="usuario.compania">
+          </div>
+      
+          <div class="form-group">
+            <label for="cargo">Cargo:</label>
+            <input type="text" id="cargo" name="cargo" class="form-control" [(ngModel)]="usuario.cargo">
+          </div>
+      
+          <div class="form-group">
+            <label for="correoCorporativo">Correo Corporativo:</label>
+            <input type="email" id="correoCorporativo" name="correoCorporativo" class="form-control" [(ngModel)]="usuario.correoCorporativo">
+          </div>
+      
+          <div class="form-group">
+            <label for="paisTrabajo">País trabajo:</label>
+            <select id="paisTrabajo" name="paisTrabajo" class="form-control" [(ngModel)]="usuario.paisTrabajo">
+              <option value="1">País 1</option>
+              <option value="2">País 2</option>
+              <!-- Agregar más opciones según sea necesario -->
+            </select>
+          </div>
+      
+          <div class="form-group">
+            <label for="departamentoTrabajo">Departamento  trabajo:</label>
+            <input type="text" id="departamentoTrabajo" name="departamentoTrabajo" class="form-control" [(ngModel)]="usuario.departamentoTrabajo">
+          </div>
+      
+          <div class="form-group">
+            <label for="ciudadTrabajo">Ciudad trabajo:</label>
+            <input type="text" id="ciudadTrabajo" name="ciudadTrabajo" class="form-control" [(ngModel)]="usuario.ciudadTrabajo">
+          </div>
+      
+          <div class="form-group">
+            <label for="personasHogar">Personas que aportan económicamente en el hogar:</label>
+            <input type="number" id="personasHogar" name="personasHogar" class="form-control" [(ngModel)]="usuario.personasHogar">
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-grid">   
+        <button type="submit" class="btn btn-primary" >Siguiente</button>
+    </div>
+    </form>
+    <div class="custom-modal" *ngIf="mostrarAlerta">
+      <div class="custom-modal-content">
+        <span class="close-btn" (click)="mostrarAlerta = false">&times;</span>
+        <p>Todos los campos son obligatorios. Por favor, complete todos los campos.</p>
+        <button class="btn-primary" (click)="mostrarAlerta = false">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+  
+  
+
+<!-- <form (ngSubmit)="submitForm()" #actualizarForm="ngForm">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="usuario.nombre" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" class="form-control" [(ngModel)]="usuario.apellido" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" name="direccion" class="form-control" [(ngModel)]="usuario.direccion">
+    </div>
+  
+    <div class="form-group">
+      <label for="genero">Género:</label>
+      <select id="genero" name="genero" class="form-control" [(ngModel)]="usuario.genero">
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="otro">Otro</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="tipoDocumento">Tipo de Documento:</label>
+      <select id="tipoDocumento" name="tipoDocumento" class="form-control" [(ngModel)]="usuario.tipoDocumento">
+        <option value="dni">DNI</option>
+        <option value="pasaporte">Pasaporte</option>
+        <option value="carnetExtranjeria">Carnet de Extranjería</option>
+      </select>
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Siguiente</button>
+  </form>
+  
+ -->

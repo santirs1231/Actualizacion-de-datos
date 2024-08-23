@@ -1,0 +1,99 @@
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+  <div class="custom-form">
+    <form (ngSubmit)="submitForm()">
+      <!-- Datos de Hijos del Colaborador -->
+      <fieldset>
+        <legend>Hijos del Colaborador</legend>
+      
+        <div class="form-group">
+          <label for="tieneHijos">¿Tienes Hijos?</label>
+          <select id="tieneHijos" [(ngModel)]="hijos.tieneHijos" name="tieneHijos" class="form-control" required>
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+      
+        <div *ngIf="hijos.tieneHijos === 'si'">
+          <div class="form-group form-grid">
+            <div class="form-group">
+              <label for="nombres">Nombres:</label>
+              <input id="nombres" type="text" name="nombres" class="form-control" [(ngModel)]="hijos.nombres">
+            </div>
+            <div class="form-group">
+              <label for="apellidos">Apellidos:</label>
+              <input id="apellidos" type="text" name="apellidos" class="form-control" [(ngModel)]="hijos.apellidos">
+            </div>
+            <div class="d-grid grid-cols-auto">
+              <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+              <input id="fechaNacimiento" type="date" name="fechaNacimiento" class="form-control" [(ngModel)]="hijos.fechaNacimiento">
+            </div>
+            <div class="d-grid grid-cols-auto">
+              <label for="numeroDocumento">Número de Documento:</label>
+              <input id="numeroDocumento" type="text" name="numeroDocumento" class="form-control" [(ngModel)]="hijos.numeroDocumento">
+            </div>
+            <div class="form-group">
+              <label for="tipoDocumento">Tipo de Documento:</label>
+              <select id="tipoDocumento" name="tipoDocumento" class="form-control" [(ngModel)]="hijos.tipoDocumento">
+                <option value="dni">DNI</option>
+                <option value="pasaporte">Pasaporte</option>
+                <option value="carnetExtranjeria">Carnet de Extranjería</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="sexo">Sexo:</label>
+              <select id="sexo" name="sexo" class="form-control" [(ngModel)]="hijos.sexo">
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="viveConEmpleado">Vive con empleado:</label>
+              <select id="viveConEmpleado" name="viveConEmpleado" class="form-control" [(ngModel)]="hijos.viveConEmpleado">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      
+        <div *ngIf="hijosList.length > 0">
+          <hr>
+          <h4>Hijos Agregados:</h4>
+          <div *ngFor="let hijo of hijosList; let i = index" class="form-group">
+            <strong>Nombre:</strong> {{ hijo.nombres }}<br>
+            <strong>Apellidos:</strong> {{ hijo.apellidos }}<br>
+            <strong>Fecha de Nacimiento:</strong> {{ hijo.fechaNacimiento }}<br>
+            <strong>Numero de Documento:</strong> {{ hijo.numeroDocumento }}<br>
+            <strong>Tipo de Documento:</strong> {{ hijo.tipoDocumento }}<br>
+            <strong>Sexo:</strong> {{ hijo.sexo }}<br>
+            <strong>Vive con empleado:</strong> {{ hijo.viveConEmpleado }}<br>
+            <button type="button" class="btn btn-danger" (click)="eliminarHijo(i)">Eliminar</button>
+          </div>
+        </div>
+        
+      
+        <div class="text-center">
+          <button type="button" class="btn btn-success mt-3" (click)="agregarHijos()">Agregar</button>
+        </div>
+      </fieldset>
+      
+
+      <div class="form-grid">
+      <button type="button" class="btn btn-secondary" (click)="navegarAExperiencia()">Atrás</button>
+      <button type="submit" class="btn btn-primary mt-3">Siguiente</button>
+    </div>
+
+    <div class="custom-modal" *ngIf="mostrarAlerta">
+      <div class="custom-modal-content">
+        <span class="close-btn" (click)="mostrarAlerta = false">&times;</span>
+        <p>Todos los campos son obligatorios. Por favor, complete todos los campos.</p>
+        <button class="btn-primary" (click)="mostrarAlerta = false">OK</button>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+
+
+  

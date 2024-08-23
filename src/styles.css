@@ -1,0 +1,177 @@
+.container-fluid {
+  background-color: #f0f8ff; /* Fondo claro azul */
+  min-height: 100vh; /* Mínima altura de la pantalla */
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  padding: 20px; /* Espaciado interior */
+  box-sizing: border-box; /* Incluye el padding en el tamaño total */
+  overflow-y: auto; /* Habilita el scroll vertical cuando es necesario */
+}
+
+.custom-form {
+  width: 80%; /* Ancho del formulario, ajustado según necesidades */
+  max-width: 1000px; /* Máximo ancho del formulario */
+  padding: 30px; /* Espaciado interior */
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-sizing: border-box; /* Incluye el padding en el tamaño total */
+}
+
+.custom-form fieldset {
+  border: 1px solid #ccc; /* Borde del fieldset */
+  border-radius: 10px; /* Bordes redondeados */
+  margin-bottom: 20px; /* Margen inferior */
+  padding: 20px; /* Espaciado interno */
+}
+
+.custom-form legend {
+  font-size: 1.4rem; /* Tamaño de la leyenda */
+  color: #ffffff; /* Color azul para etiquetas */
+  margin-bottom: 15px; /* Margen inferior */
+  display: flex; /* Mostrar como bloque */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  padding: 10px 20px; /* Espaciado interno */
+  border-bottom: 2px solid #586AE8; /* Línea inferior azul */
+  font-family: 'Visby Heavy' ; /* Texto en negrita */
+  background-color: #586AE8; /* Fondo claro azul para resaltar */
+  border-radius: 10px; /* Bordes redondeados */
+  width: 95%; /*Ancho*/
+  /* font-style:thin; */
+}
+
+.custom-form .form-grid {
+  display: grid; /* Uso de grid para layout */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas autoajustables */
+  gap: 20px; /* Espacio entre columnas */
+}
+
+.custom-form .form-group {
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+.custom-form label {
+  width: auto; /* Ancho al 100% para ocupar toda la línea */
+  display: block; /* Mostrar como bloque */
+  text-align: left; /* Alineación del texto */
+  margin-bottom: 10px; /* Margen inferior */
+  color: #586AE8; /* Color azul para etiquetas */
+  font-family: 'Visby'; /* Texto en negrita */
+  padding: 5px 10px; /* Espaciado interno */
+  border-left: 5px solid #586AE8; /* Borde izquierdo azul */
+  background-color: #f9f9f9; /* Fondo claro */
+  border-radius: 5px; /* Bordes redondeados */
+  
+}
+
+
+
+.custom-form .btn-primary {
+  background-color: #586AE8; /* Color de fondo */
+  color: #fff; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 12px 24px; /* Espaciado interno */
+  font-size: 1.1rem; /* Tamaño de la fuente */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave */
+  font-family: 'Visby Heavy';
+}
+
+.custom-form .btn-primary:hover {
+  background-color: #3444bd; /* Color de fondo al pasar el mouse */
+}
+
+.custom-form .btn-secondary {
+  background-color: #C6C6C6; /* Color de fondo */
+  color: #fff; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 12px 24px; /* Espaciado interno */
+  font-size: 1.1rem; /* Tamaño de la fuente */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.custom-form .btn-secondary:hover {
+  background-color: #545b62; /* Color de fondo al pasar el mouse */
+}
+
+
+.custom-form input,
+.custom-form select,
+.custom-form textarea {
+  width: 100%; /* Ancho al 100% */
+  padding: 10px; /* Espaciado interno */
+  margin-bottom: 10px; /* Margen inferior */
+  border: 1px solid #ccc; /* Borde */
+  border-radius: 5px; /* Bordes redondeados */
+  box-sizing: border-box; /* Incluye el padding en el tamaño total */
+  font-size: 1rem; /* Tamaño de la fuente */
+  transition: border-color 0.3s; /* Transición suave */
+}
+
+.custom-form input:focus,
+.custom-form select:focus,
+.custom-form textarea:focus {
+  border-color: #586AE8; /* Color de borde al enfocar */
+  outline: none; /* Sin borde de enfoque */
+}
+
+.custom-form .form-group-required::after {
+  content: " *"; /* Asterisco para campos requeridos */
+  color: #FD636B; 
+  font-family: 'Visby Heavy'; 
+}
+
+.checkbox-label{
+  margin-top: auto;
+}
+
+/*Alerta*/
+.custom-modal {
+  position: fixed; /* Fijo en la pantalla */
+  z-index: 1000; /* Superposición sobre otros elementos */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+  overflow: auto; /* Desplazamiento automático */
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+  display: flex; /* Flexbox para centrar */
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+}
+
+.custom-modal-content {
+  background-color: #c6c6c6; /* Fondo rojo claro */
+  border: 1px solid #586AE8; /* Borde del cuadro */
+  color: #000000; /* Color del texto */
+  font-family: 'Visby Heavy';
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  width: 80%; /* Ancho del contenido */
+  max-width: 400px; /* Ancho máximo */
+  text-align: center; /* Centrado del texto */
+}
+
+.custom-modal-content .close-btn {
+  position: absolute; /* Posicionamiento absoluto */
+  top: 10px; /* Distancia desde la parte superior */
+  right: 10px; /* Distancia desde la derecha */
+  font-size: 1.5rem; /* Tamaño de la fuente */
+  cursor: pointer; /* Cursor de puntero */
+}
+
+.custom-modal-content button {
+  margin-top: 20px; /* Margen superior */
+}
+
+
+
+
+
+
+
+  

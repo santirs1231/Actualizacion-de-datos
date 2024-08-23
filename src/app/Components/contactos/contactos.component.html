@@ -1,0 +1,110 @@
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+  <div class="custom-form">
+    <form (ngSubmit)="submitForm()">
+      <!-- Contactos de emergencia -->
+      <fieldset>
+        <legend>Contactos de emergencia</legend>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="nombreContacto1">Nombre Contacto</label>
+            <input id="nombreContacto1" [(ngModel)]="contactosEmergencia.nombreContacto1" name="nombreContacto1" type="text">
+          </div>
+          <div class="form-group">
+            <label for="numeroContacto1">Número de Contacto</label>
+            <input id="numeroContacto1" [(ngModel)]="contactosEmergencia.numeroContacto1" name="numeroContacto1" type="text">
+          </div>
+          <div class="form-group">
+            <label for="parentesco1">Parentesco</label>
+            <select id="parentesco1" [(ngModel)]="contactosEmergencia.parentesco1" name="parentesco1">
+              <option value="Padre">PADRE</option>
+              <option value="Madre">MADRE</option>
+              <option value="Hermano">HERMANO(A)</option>
+              <option value="Hijo">HIJO(A)</option>
+              <option value="Otro">OTRO</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="nombreContacto2">Nombre Contacto 2</label>
+            <input id="nombreContacto2" [(ngModel)]="contactosEmergencia.nombreContacto2" name="nombreContacto2" type="text">
+          </div>
+          <div class="form-group">
+            <label for="numeroContacto2">Número de Contacto 2</label>
+            <input id="numeroContacto2" [(ngModel)]="contactosEmergencia.numeroContacto2" name="numeroContacto2" type="text">
+          </div>
+          <div class="form-group">
+            <label for="parentesco2">Parentesco 2</label>
+            <select id="parentesco2" [(ngModel)]="contactosEmergencia.parentesco2" name="parentesco2">
+              <option value="Padre">PADRE</option>
+              <option value="Madre">MADRE</option>
+              <option value="Hermano">HERMANO(A)</option>
+              <option value="Hijo">HIJO(A)</option>
+              <option value="Otro">OTRO</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+  
+      <!-- Otros Documentos -->
+      <fieldset>
+        <legend>Otros Documentos</legend>
+        <div class="form-group right-aligned">
+          <label for="libreta">Libreta</label>
+          <div class="checkbox-label">
+            <input id="libreta" [(ngModel)]="otrosDocumentos.libreta" name="libreta" type="checkbox">
+            <span>No Aplica</span>
+          </div>
+        </div>
+
+
+        <div class="form-grid" *ngIf="!otrosDocumentos.libreta">
+          <div class="form-group">
+            <label for="numeroLibreta">Número Libreta</label>
+            <input id="numeroLibreta" [(ngModel)]="otrosDocumentos.numeroLibreta" name="numeroLibreta" type="text">
+          </div>
+          <div class="form-group">
+            <label for="fechaExpedicion">Fecha de Expedición</label>
+            <input id="fechaExpedicion" [(ngModel)]="otrosDocumentos.fechaExpedicion" name="fechaExpedicion" type="date">
+          </div>
+        </div>
+  
+        <!-- Siempre muestra estos campos -->
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="categoriaLicencia">Categoría Licencia</label>
+            <select id="categoriaLicencia" [(ngModel)]="otrosDocumentos.categoriaLicencia" name="categoriaLicencia">
+              <option value="Categoraria1">1</option>
+              <option value="Categoria2">2</option>
+
+              <!-- Opciones de categoría -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="numeroLicencia">Número Licencia</label>
+            <input id="numeroLicencia" [(ngModel)]="otrosDocumentos.numeroLicencia" name="numeroLicencia" type="text">
+          </div>
+          <div class="form-group">
+            <label for="fechaVencimiento">Fecha de Vencimiento</label>
+            <input id="fechaVencimiento" [(ngModel)]="otrosDocumentos.fechaVencimiento" name="fechaVencimiento" type="date">
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-grid">
+      <button type="button" class="btn btn-secondary" (click)="navegarAHijos()">Atrás</button>
+      <button type="submit" class="btn btn-primary">Siguiente</button>
+     </div>
+
+    <div class="custom-modal" *ngIf="mostrarAlerta">
+      <div class="custom-modal-content">
+        <span class="close-btn" (click)="mostrarAlerta = false">&times;</span>
+        <p>Todos los campos son obligatorios. Por favor, complete todos los campos.</p>
+        <button class="btn-primary" (click)="mostrarAlerta = false">OK</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+
+
+
